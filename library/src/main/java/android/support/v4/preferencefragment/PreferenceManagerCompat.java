@@ -31,9 +31,9 @@ import android.preference.PreferenceScreen;
 import android.util.Log;
 
 public class PreferenceManagerCompat {
-	
+
 	private static final String TAG = PreferenceManagerCompat.class.getSimpleName();
-	
+
     /**
      * Interface definition for a callback to be invoked when a
      * {@link Preference} in the hierarchy rooted at this {@link PreferenceScreen} is
@@ -43,7 +43,7 @@ public class PreferenceManagerCompat {
         /**
          * Called when a preference in the tree rooted at this
          * {@link PreferenceScreen} has been clicked.
-         * 
+         *
          * @param preferenceScreen The {@link PreferenceScreen} that the
          *        preference is located in.
          * @param preference The preference that was clicked.
@@ -51,7 +51,7 @@ public class PreferenceManagerCompat {
          */
         boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference);
     }
-    
+
 	static PreferenceManager newInstance(Activity activity, int firstRequestCode) {
 		try {
 			Constructor<PreferenceManager> c = PreferenceManager.class.getDeclaredConstructor(Activity.class, int.class);
@@ -62,7 +62,7 @@ public class PreferenceManagerCompat {
 		}
 		return null;
 	}
-	
+
 	/**
      * Sets the owning preference fragment
      */
@@ -73,7 +73,7 @@ public class PreferenceManagerCompat {
     /**
      * Sets the callback to be invoked when a {@link Preference} in the
      * hierarchy rooted at this {@link PreferenceManager} is clicked.
-     * 
+     *
      * @param listener The callback to be invoked.
      */
 	static void setOnPreferenceTreeClickListener(PreferenceManager manager, final OnPreferenceTreeClickListener listener) {
@@ -101,7 +101,7 @@ public class PreferenceManagerCompat {
 			Log.w(TAG, "Couldn't set PreferenceManager.mOnPreferenceTreeClickListener by reflection", e);
 		}
 	}
-	
+
 	/**
      * Inflates a preference hierarchy from the preference hierarchies of
      * {@link Activity Activities} that match the given {@link Intent}. An
@@ -110,7 +110,7 @@ public class PreferenceManagerCompat {
      * <p>
      * If a preference hierarchy is given, the new preference hierarchies will
      * be merged in.
-     * 
+     *
      * @param queryIntent The intent to match activities.
      * @param rootPreferences Optional existing hierarchy to merge the new
      *            hierarchies into.
@@ -128,11 +128,11 @@ public class PreferenceManagerCompat {
 		}
 		return null;
 	}
-	
+
 	/**
      * Inflates a preference hierarchy from XML. If a preference hierarchy is
      * given, the new preference hierarchies will be merged in.
-     * 
+     *
      * @param context The context of the resource.
      * @param resId The resource ID of the XML to inflate.
      * @param rootPreferences Optional existing hierarchy to merge the new
@@ -152,10 +152,10 @@ public class PreferenceManagerCompat {
 		}
 		return null;
 	}
-	
+
 	/**
      * Returns the root of the preference hierarchy managed by this class.
-     *  
+     *
      * @return The {@link PreferenceScreen} object that is at the root of the hierarchy.
      */
 	static PreferenceScreen getPreferenceScreen(PreferenceManager manager) {
@@ -168,7 +168,7 @@ public class PreferenceManagerCompat {
 		}
 		return null;
 	}
-	
+
 	/**
      * Called by the {@link PreferenceManager} to dispatch a subactivity result.
      */
@@ -181,7 +181,7 @@ public class PreferenceManagerCompat {
 			Log.w(TAG, "Couldn't call PreferenceManager.dispatchActivityResult by reflection", e);
 		}
 	}
-	
+
 	/**
      * Called by the {@link PreferenceManager} to dispatch the activity stop
      * event.
@@ -195,7 +195,7 @@ public class PreferenceManagerCompat {
 			Log.w(TAG, "Couldn't call PreferenceManager.dispatchActivityStop by reflection", e);
 		}
 	}
-	
+
 	/**
      * Called by the {@link PreferenceManager} to dispatch the activity destroy
      * event.
@@ -212,9 +212,9 @@ public class PreferenceManagerCompat {
 
 	/**
      * Sets the root of the preference hierarchy.
-     * 
+     *
      * @param preferenceScreen The root {@link PreferenceScreen} of the preference hierarchy.
-     * @return Whether the {@link PreferenceScreen} given is different than the previous. 
+     * @return Whether the {@link PreferenceScreen} given is different than the previous.
      */
 	static boolean setPreferences(PreferenceManager manager, PreferenceScreen screen) {
 		try {
@@ -226,5 +226,5 @@ public class PreferenceManagerCompat {
 		}
 		return false;
 	}
-	
+
 }

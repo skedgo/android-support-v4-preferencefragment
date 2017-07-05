@@ -1,43 +1,11 @@
 buildscript {
-    repositories {
-        mavenCentral()
-        mavenLocal()
-    }
+  repositories {
+    mavenCentral()
+    mavenLocal()
+  }
 
-    dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.2'
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
-    }
-}
-
-apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
-
-
-group = "com.github.skedgo"
-
-dependencies {
-    compile 'com.android.support:support-v4:19.0.+'
-}
-
-android {
-    compileSdkVersion 25
-    buildToolsVersion '25.0.2'
-
-    defaultConfig {
-        minSdkVersion 7
-        targetSdkVersion 25
-    }
-
-    sourceSets {
-        main {
-            manifest.srcFile 'AndroidManifest.xml'
-            java.srcDirs = ['src']
-            resources.srcDirs = ['src']
-            aidl.srcDirs = ['src']
-            renderscript.srcDirs = ['src']
-            res.srcDirs = ['res']
-            assets.srcDirs = ['assets']
-        }
-    }
+  dependencies {
+    classpath 'com.android.tools.build:gradle:2.3.2'
+    classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
+  }
 }

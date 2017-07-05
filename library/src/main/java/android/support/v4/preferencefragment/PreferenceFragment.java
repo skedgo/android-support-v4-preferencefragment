@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package android.support.v4.preference;
+package main.java.android.support.v4.preference;
 
 import android.content.Intent;
 import android.os.Build;
