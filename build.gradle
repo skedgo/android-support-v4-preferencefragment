@@ -14,7 +14,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 
 
-group = GROUP
+group = "com.github.skedgo"
 
 dependencies {
     compile 'com.android.support:support-v4:19.0.+'
